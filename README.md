@@ -176,10 +176,6 @@ Again, a simple plot using seaborn, but a different Color Palette: *CMRmap*.
 <img src="assets/plots/top10media.png">
 </p>
 
-<p align="center">
-<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width=400>
-</p>
-
 ### Top 10 most used Emojis
 
 Will be using the `emoji` module, that was imported earlier.
