@@ -21,10 +21,6 @@
 - With media: exports about *10k messages along with pictures/videos* 
 - While exporting data, *avoid including media files* because if the number of media files is greater than certain figure then not all the media files are exported.
 - This analyzer assumes that the chats are in 24 hour format.
-#### Opening this .txt file up, you get messages in a format that looks like this:
-
-<img src="assets/extras/textfile.png" align="center">
-
 
 ### *Exploratory Data Analysis*
 
@@ -63,87 +59,45 @@ While reading each line, I split it based on a comma and take the first item ret
 
 ### *Pre-Processing*
 
-Firstly, let’s load our .txt into a DataFrame.
+Firstly, load .txt into a DataFrame.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (2).png">
-</p>
+The dataset now contains 3 columns - DateTime String, User, and Message sent and their respective entries.
 
-The dataset now contains 3 columns - DateTime String, User, and Message sent and their respective entries in 13655 rows.
+**Creating some helper columns for better analysis!**
 
-**Let’s create some helper columns for better analysis!**
-
-<p align="center">
-<img src="assets/code_snippets/carbon (3).png">
-</p>
-
-Now that we have a clean DataFrame to work with, it’s time to perform analysis on it. **Let’s start Visualizing!**
-
-<p align="center">
-<img src="assets/extras/1-gina.gif" width=350>
-</p>
+Now that we have a clean DataFrame to work with, it’s time to perform analysis on it. 
 
 ## *Exploratory Data Analysis*
 
-At this point, I think I’m ready to start my analysis so I will plot a simple line graph to see the frequency of messages over the months. 
-
 ### The overall frequency of total messages on the group
+![image](https://user-images.githubusercontent.com/75696894/208251511-077e9556-9856-47df-bda5-3923593aeafd.png)
 
-<p align="center">
-<img src="assets/code_snippets/carbon (4).png">
-</p>
-<p align="center">
-<img src="assets/code_snippets/carbon (5).png">
-</p>
-<p align="center">
-<img src="assets/plots/msg_plots.png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251523-37c73e52-1a9e-409b-b366-5fb0698e23d1.png)
+
+![image](https://user-images.githubusercontent.com/75696894/208251537-674183e8-d869-4a7f-8e03-21c5bf0eef52.png)
 
 ### Top 10 Most Active Days
 Grouping the data set by date and sorting values according to the number of messages per day.
 
-
-<p align="center">
-<img src="assets/code_snippets/carbon (6).png">
-</p>
-
-<p align="center">
-<img src="assets/code_snippets/carbon (7).png">
-</p>
-
-<p align="center">
-<img src="assets/plots/top10_days.png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251570-68c95885-b2a1-4ef3-bc59-606e28e59406.png)
+![image](https://user-images.githubusercontent.com/75696894/208251579-b6f75ba3-e026-4bfd-944d-cf57956129b7.png)
+![image](https://user-images.githubusercontent.com/75696894/208251595-bd6f3059-e00e-4e85-99a3-a96a3ab95610.png)
 
 
 ### Top 10 active users on the group
 
-Before analyzing, the top users, let’s find out how many ghosts are there in the group!
-
-
-<p align="center">
-<img src="assets/code_snippets/carbon (8).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251619-3617ff82-53e9-411a-9213-2ca51be2a83e.png)
 
 #### Now, *pre-processing the top 10 active users.*
 
 Grouping the dataset by the user, and sorting according to the message count.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (9).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251637-0f77d165-9ebe-43ab-80d4-a96b0e8bfca1.png)
+
 
 And, we will be *replacing names by their initials* for **Better Visualization**, and also to maintain anonymity.
 
-
-<p align="center">
-<img src="assets/code_snippets/carbon (10).png">
-</p>
-
-
-<p align="center">
-<img src="assets/code_snippets/carbon (11).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251662-1f7fa8f3-d89a-4a32-97da-7c841ce45df7.png)
 
 **First plot will be the total number of messages sent per person.** For this, a simple *seaborn countplot* will suffice.
 
