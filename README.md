@@ -1,9 +1,7 @@
 # WhatsApp-Chat-Analyzer
 Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 
-# A Comprehensive Data Analysis on a WhatsApp Group Chat
-
-
+# Methodology
 ## *Data Retrieval & Preprocessing*
 ### Beginning. How to export conversations from WhatsApp?
 
@@ -29,7 +27,7 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 <img src="assets/extras/textfile.png" align="center">
 
 
-# *Exploratory Data Analysis*
+## *Exploratory Data Analysis*
 
 ### *Importing Necessary Libraries*
 
