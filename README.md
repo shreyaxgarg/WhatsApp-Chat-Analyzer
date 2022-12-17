@@ -1,5 +1,4 @@
 # WhatsApp-Chat-Analyzer
-Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 
 # Methodology
 ## *Data Retrieval & Preprocessing*
@@ -90,8 +89,6 @@ At this point, I think I’m ready to start my analysis so I will plot a simple 
 
 ## The overall frequency of total messages on the group
 
-I expect to see a nice line graph with crests and troughs in odd places.
-
 <p align="center">
 <img src="assets/code_snippets/carbon (4).png">
 </p>
@@ -158,81 +155,7 @@ And, we will be *replacing names by their initials* for **Better Visualization**
 <img src="assets/plots/top10users.png">
 </p>
 
-**TK** beats everyone by a mile, with **2500+ messages**, followed by **DL** with around **2000 messages**.
-
-#### But here comes the twist!
-
-Now, I will plot the **Average Message Length of the messages sent by the Top 10 most active users**. *Let’s see the results now!*
-
 ### *Comparing the top 10 users!*
-
-Now, first things first, since almost all the plots will be *comparing one person with another*, I’ll assign a **specific color to each person** so that it becomes **easy to identify each person among multiple plots**.
-
-I could’ve used *seaborn’s color palette* but:
-
-— Seaborn assigns *default colors* itself, but I wanted ***the color of a certain person to remain the same, no matter the plot.***
-
-— Also, I wanted to try some different colors so I grabbed my color palette from [this website](https://coolors.co/).
-#### Defining a function to tackle the problem.
-
-I’m defining this function ***to maintain consistent colors for each person across all plots***. Since the order will vary depending on the plot, this is passed to the function which will *reorder colors in a particular order so that the color of a certain person remains the same no matter the plot*. This will help maintain ***consistency and readability*** amongst the many graphs I will be plotting.
-
-<p align="center">
-<img src="assets/code_snippets/carbon (14).png">
-</p>
-
-Next, I made a dictionary where **each key is the name and the value for each would be their assigned color**. I create a function that reorders colors given a list of names to match the ordering of the plot. 
-
-This function takes the ordered names as input and returns a reordered list of colors. This list has to be passed into the **`palette`** argument in a **seaborn plotting function.**
-
-<p align="center">
-<img src="assets/code_snippets/carbon (15).png">
-</p>
-
-Now we have a *nice set of colors for each person* which we can visualize using **palplot**.
-
-
-<p align="center">
-<img src="assets/plots/top10_palette.png">
-</p>
-
-The next one would be the average message length for each person. For this, I create a new column called `message_length` which contains the length of each message which I get by using a lambda function which returns the length of a given message. I just group the DataFrame by name and then apply `mean()` on the returned groupby object.
-
-<p align="center">
-<img src="assets/code_snippets/carbon (16).png">
-</p>
-
-- **Plotting multiple charts in a grid**
-
-Matplotlib and Seaborn also support plotting multiple charts in a grid, using `plt.subplots`, which returns a set of axes that can be used for plotting.
-
-<p align="center">
-<img src="assets/code_snippets/carbon (17).png">
-</p>
-
-#### Let’s see the plots, simultaneously for **some interesting results**!
-
-<p align="center">
-<img src="assets/plots/top10_msg_plots_diff.png">
-</p>
-
-It’s really interesting to see plots like this side by side, because here comes the twist:
-
-- Ironically, TK, the person who sent the **most amount of texts** (2000+), has the least messages’ length on average. This means this person sends broken and many WhatsApp messages in one go.
-
-Here is a snippet of how TK sends messages:
-
-<p>
-<img src="assets/extras/TK_MSG_Snippet.png" width=350>
-</p>
-
-- Also, we can see that, I have sent *less number of messages (7th) on average* while having a ***relatively longer message length (1st)***.
-
-<p align="center">
-<img src="assets/extras/2-bragging.gif">
-</p>
-
-Alright, moving on to a more detailed analysis of the dataset!
 
 ## The Top 10 users who send the most media
 
@@ -252,8 +175,6 @@ Again, a simple plot using seaborn, but a different Color Palette: *CMRmap*.
 <p align="center">
 <img src="assets/plots/top10media.png">
 </p>
-
-**TK and DL** are beating everyone by a *huge margin*. They, also rank the *top in total messages*, though *last in average message length*. ***Most dedicated contributor award goes to TK and DL!***
 
 <p align="center">
 <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width=400>
@@ -343,34 +264,7 @@ Now, we will be plotting ***grouped by day and respective group by month simulta
 <img src="assets/plots/days_and_month.png">
 </p>
 
-## *Inferences*
 
-- The group is **most active on Sundays**, and **least active on Mondays** (probably *Monday Blues*.)
-
-- Also, **Saturday** has a *minor drop*, this is probably due to the fact that Saturday is the *first weekend after Friday* and people are usually taking a *rest* and doing other activities than messaging on their phones.
-
-- The group has been recently very active, in September.
-
-
-To get a clearer understanding, we will plot a combined graph — **Heatmap**.
-
-#### Now, we will plot a heatmap, combining the above to bar plots, for a better understanding!
-
-<p align="center">
-<img src="assets/code_snippets/carbon (27).png">
-</p>
-
-### Heatmap of Month sent and Day sent
-
-<p align="center">
-<img src="assets/plots/month_day_heatmap.png">
-</p>
-
-##### Inferences
-
-- The group is more active on weekends, throughout the months.
-- September has the most lighter blue shades and more yellow gradients.
-- This gives a *combined analysis*, which is really helpful in **real-time projects**.
 
 ## Most Used Words in the whole chat.
 
@@ -386,7 +280,7 @@ I will be using the `wordcloud` module, to create a WordCloud of the **most used
 <img src="assets/plots/wordcloud.png">
 </p>
 
-# *Conclusion*
+## *Conclusion*
 
 **That’s it from my end! I hope you learned and enjoyed a lot!**
 
@@ -394,25 +288,5 @@ I will be using the `wordcloud` module, to create a WordCloud of the **most used
 <img src="assets/extras/5-the-office.gif">
 </p>
 
-It’s really interesting to see the texting habits of people and incidents of daily life reflected in the text. I suggest you take a look at my code and apply it to your own group chats. However, some modifications will have to be done at the DataFrame creation part. 
-
-If you’re interested, shoot me a message and I’ll help you out.
-
-## Where to go from here?
-
-- Extending this Whatsapp Analysis Project!
-    - Adding a **Sentiment Analyser to the texts** — *Swear Words & Sentiments*!
-    - Libraries called `profanity_check`, `TextBlob`, `VADER` (Valence Aware Dictionary and Sentiment Reasoner) from NTLK and TextBlob.
-
-- Instagram Data Analysis
-- Play Store Data Analysis
-- Exploring more datasets! It is never-ending, as there can be **Infinite Stories with Data**!
-- Once, done with enough Data Analysis, try making Datasets, scraping Data from websites and creating Interesting Datasets!
-
-> And the best time to do it is right now, today, because tomorrow, typically means never.
-
-
-***Thank you for reading!*** *Let me know what you thought about this project.*
-
-# Author 
-- [Tushar Nankani](https://www.linkedin.com/in/tusharnankani/)
+## Live Link
+Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
