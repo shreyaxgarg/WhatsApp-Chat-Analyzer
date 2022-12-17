@@ -16,7 +16,7 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 - Go to the respective chat, which you want to export!
 
 <p align="center">
-    <img src="[assets/extras/whatsapp-media.jpg ](https://user-images.githubusercontent.com/75696894/208237986-844aaccb-d36e-4c87-a39b-0c83b3c9dc59.png)" width=200 length=150 align="center">
+    <img src="assets/extras/whatsapp-media.jpg ](https://user-images.githubusercontent.com/75696894/208237986-844aaccb-d36e-4c87-a39b-0c83b3c9dc59.png" width=200 length=150 align="center">
 
 </p>
 
