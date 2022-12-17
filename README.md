@@ -15,28 +15,15 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 
 - Go to the respective chat, which you want to export!
 
-<p align="center">
-    <img src="assets/extras/whatsapp-media.jpg ](https://user-images.githubusercontent.com/75696894/208237986-844aaccb-d36e-4c87-a39b-0c83b3c9dc59.png" width=200 length=150 align="center">
-
-</p>
-
 - Tap on **options**, click on **More**, and **Export Chat.**
 
-
-![image](https://user-images.githubusercontent.com/75696894/208237994-f7465bb0-7562-4bbc-ab2f-3408fa8a5b13.png)
-
-
 - I will be Exporting **Without Media.**
-
-<p align="center">
-<img src="assets/extras/whatsapp-media.jpg " width=200 length=150 align="center">
-</p>
 
 #### NOTE:
 - Without media: exports about **40k messages **
 - With media: exports about *10k messages along with pictures/videos* 
 - While exporting data, *avoid including media files* because if the number of media files is greater than certain figure then not all the media files are exported.
-
+- This analyzer assumes that the chats are in 24 hour format.
 ### Opening this .txt file up, you get messages in a format that looks like this:
 
 <img src="assets/extras/textfile.png" align="center">
