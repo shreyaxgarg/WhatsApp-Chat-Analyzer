@@ -3,30 +3,12 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 
 # A Comprehensive Data Analysis on a WhatsApp Group Chat
 
-## *Overview*
 
-- [Introduction](#introduction)
-- [Data Retrieval & Preprocessing](#data-retrieval--preprocessing)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
-
-  - **[Overall frequency of total messages on the group.](#the-overall-frequency-of-total-messages-on-the-group)**
-  - **[Top 10 most active days.](#top-10-most-active-days)**
-  - **[Top 10 active users on the group (with a twist)](#top-10-active-users-on-the-group)**
-    - Ghosts present in the group. (shocking results.)
-  - **[Top 10 users most sent media.](#the-top-10-users-who-send-the-most-media)**
-  - **[Top 10 most used emojis.](#top-10-most-used-emojis)**
-  - **[Most active hours and days.](#top-10-most-used-emojis)**
-    - Heatmaps of weekdays and months.
-    - Most active hours, weekdays, and months.
-  - **[Most used words - WordCloud](#most-used-words-in-the-whole-chat)**
-  
-- [Conclusion](#conclusion)
-
-# *Data Retrieval & Preprocessing*
+## *Data Retrieval & Preprocessing*
 ### Beginning. How to export conversations from WhatsApp?
 
 <p align="center">
-<img src="assets/extras/4-the-office.gif" width=350>
+
 </p>
 
 - The first step is **Data Retrieval & Preprocessing**, that is to **gather the data**. WhatsApp allows you to **export your chats** through a **.txt format**. 
@@ -34,13 +16,13 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 - Go to the respective chat, which you want to export!
 
 <p align="center">
-<img src="assets/extras/whatsapp-options.jpg" width=150 align="center">
+![image](https://user-images.githubusercontent.com/75696894/208237986-844aaccb-d36e-4c87-a39b-0c83b3c9dc59.png)
 </p>
 
 - Tap on **options**, click on **More**, and **Export Chat.**
 
 <p align="center">
-<img src="assets/extras/whatsapp-export-chat.jpg" width=150>
+![image](https://user-images.githubusercontent.com/75696894/208237994-f7465bb0-7562-4bbc-ab2f-3408fa8a5b13.png)
 </p>
 
 - I will be Exporting **Without Media.**
