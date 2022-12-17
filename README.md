@@ -1,8 +1,8 @@
 # WhatsApp-Chat-Analyzer
 
-# Methodology
-## *Data Retrieval & Preprocessing*
-### Beginning. How to export conversations from WhatsApp?
+## Methodology
+### *Data Retrieval & Preprocessing*
+#### Beginning. How to export conversations from WhatsApp?
 
 <p align="center">
 
@@ -21,14 +21,14 @@
 - With media: exports about *10k messages along with pictures/videos* 
 - While exporting data, *avoid including media files* because if the number of media files is greater than certain figure then not all the media files are exported.
 - This analyzer assumes that the chats are in 24 hour format.
-### Opening this .txt file up, you get messages in a format that looks like this:
+#### Opening this .txt file up, you get messages in a format that looks like this:
 
 <img src="assets/extras/textfile.png" align="center">
 
 
-## *Exploratory Data Analysis*
+### *Exploratory Data Analysis*
 
-### *Importing Necessary Libraries*
+#### *Importing Necessary Libraries*
 
 Libraries used :
 1. **Regex (re)** to extract and manipulate strings based on specific patterns.
@@ -51,7 +51,7 @@ Libraries used :
 <img src="assets/code_snippets/carbon (1).png">
 </p>
 
-### *Preparation and reading data*
+#### *Preparation and reading data*
 
 Since WhatsApp texts are multi-line, you cannot just read the file line by line and get each message that you want. Instead, you need a way to identify if a line is a new message or part of an old message. You could do this use regular expressions, but I went forward with a more simple method, which splits the time formats and creates a DataFrame from a Raw .txt file.
 
@@ -61,7 +61,7 @@ While reading each line, I split it based on a comma and take the first item ret
 <img src="assets/code_snippets/carbon (0).png">
 </p>
 
-# *Pre-Processing*
+### *Pre-Processing*
 
 Firstly, let’s load our .txt into a DataFrame.
 
@@ -83,11 +83,11 @@ Now that we have a clean DataFrame to work with, it’s time to perform analysis
 <img src="assets/extras/1-gina.gif" width=350>
 </p>
 
-# *Exploratory Data Analysis*
+## *Exploratory Data Analysis*
 
 At this point, I think I’m ready to start my analysis so I will plot a simple line graph to see the frequency of messages over the months. 
 
-## The overall frequency of total messages on the group
+### The overall frequency of total messages on the group
 
 <p align="center">
 <img src="assets/code_snippets/carbon (4).png">
@@ -99,7 +99,7 @@ At this point, I think I’m ready to start my analysis so I will plot a simple 
 <img src="assets/plots/msg_plots.png">
 </p>
 
-## Top 10 Most Active Days
+### Top 10 Most Active Days
 Grouping the data set by date and sorting values according to the number of messages per day.
 
 
@@ -116,7 +116,7 @@ Grouping the data set by date and sorting values according to the number of mess
 </p>
 
 
-## Top 10 active users on the group
+### Top 10 active users on the group
 
 Before analyzing, the top users, let’s find out how many ghosts are there in the group!
 
@@ -125,7 +125,7 @@ Before analyzing, the top users, let’s find out how many ghosts are there in t
 <img src="assets/code_snippets/carbon (8).png">
 </p>
 
-### Now, *pre-processing the top 10 active users.*
+#### Now, *pre-processing the top 10 active users.*
 
 Grouping the dataset by the user, and sorting according to the message count.
 
@@ -155,9 +155,9 @@ And, we will be *replacing names by their initials* for **Better Visualization**
 <img src="assets/plots/top10users.png">
 </p>
 
-### *Comparing the top 10 users!*
+#### *Comparing the top 10 users!*
 
-## The Top 10 users who send the most media
+### The Top 10 users who send the most media
 
 The exported chats were exported without any media files. Any message that contained media was indicated with *‘<Media Omitted> ’*. **We can use this to filter out and see who sends the most media.**
 
@@ -180,7 +180,7 @@ Again, a simple plot using seaborn, but a different Color Palette: *CMRmap*.
 <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width=400>
 </p>
 
-## Top 10 most used Emojis
+### Top 10 most used Emojis
 
 Will be using the `emoji` module, that was imported earlier.
 
@@ -204,7 +204,7 @@ Since the emojis **will not be rendered into the plots**, here is how the *top10
 <img src="assets/extras/3-gina-emoji.gif">
 </p>
 
-### Which Emoji is the most used in the chat?
+#### Which Emoji is the most used in the chat?
 
 This time, it will be plotted a bit differently. Numbers will be plotted on x-direction.
 
@@ -218,11 +218,11 @@ This time, it will be plotted a bit differently. Numbers will be plotted on x-di
 
 - Not that it is worth anything, but “😂” beats everyone by a *huge margin!*
 
-## Most active days, most active hours, most active months.
+### Most active days, most active hours, most active months.
 
 Now, I will be analyzing the timely usage of the groups.
 
-#### Pre-processing for most active hours.
+##### Pre-processing for most active hours.
 
 <p align="center">
 <img src="assets/code_snippets/carbon (23).png">
@@ -232,7 +232,7 @@ Now, I will be analyzing the timely usage of the groups.
 <img src="assets/code_snippets/carbon (24).png">
 </p>
 
-### Which hour of the day are most messages exchanged?
+#### Which hour of the day are most messages exchanged?
 
 <p align="center">
 <img src="assets/plots/most_active_hours.png">
@@ -240,7 +240,7 @@ Now, I will be analyzing the timely usage of the groups.
 
 Interestingly, the group is most active around **midnight**, followed by *afternoon*.
 
-### Pre-processing Weekdays and Months
+#### Pre-processing Weekdays and Months
 
 Now, irrespective of the number of messages per day or month, we want the order to be remain the same, hence we will be using the order argument in seaborn.
 
@@ -256,7 +256,7 @@ Now, irrespective of the number of messages per day or month, we want the order 
 </p>
 
 
-### Visualization
+#### Visualization
 
 Now, we will be plotting ***grouped by day and respective group by month simultaneously***, to see some interesting results.
 
@@ -266,7 +266,7 @@ Now, we will be plotting ***grouped by day and respective group by month simulta
 
 
 
-## Most Used Words in the whole chat.
+### Most Used Words in the whole chat.
 
 I will be using the `wordcloud` module, to create a WordCloud of the **most used words**! I will be *adding some common words, to the stopwords*, such that it will not be included the WordCloud.
 
@@ -274,13 +274,13 @@ I will be using the `wordcloud` module, to create a WordCloud of the **most used
 <img src="assets/code_snippets/carbon (28).png">
 </p>
 
-### Most Used Words in the chat
+#### Most Used Words in the chat
 
 <p align="center">
 <img src="assets/plots/wordcloud.png">
 </p>
 
-## *Conclusion*
+### *Conclusion*
 
 **That’s it from my end! I hope you learned and enjoyed a lot!**
 
