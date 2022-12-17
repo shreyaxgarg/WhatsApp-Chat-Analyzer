@@ -21,9 +21,9 @@ Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
 
 - Tap on **options**, click on **More**, and **Export Chat.**
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/75696894/208237994-f7465bb0-7562-4bbc-ab2f-3408fa8a5b13.png)
-</p>
+
 
 - I will be Exporting **Without Media.**
 
