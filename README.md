@@ -4,9 +4,6 @@
 ### *Data Retrieval & Preprocessing*
 #### Beginning. How to export conversations from WhatsApp?
 
-<p align="center">
-
-</p>
 
 - The first step is **Data Retrieval & Preprocessing**, that is to **gather the data**. WhatsApp allows you to **export your chats** through a **.txt format**. 
 
@@ -43,19 +40,12 @@ Libraries used :
 5. **wordcloud** for the most used words.
 6. **datetime** for datetime manipulation.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (1).png">
-</p>
 
 #### *Preparation and reading data*
 
 Since WhatsApp texts are multi-line, you cannot just read the file line by line and get each message that you want. Instead, you need a way to identify if a line is a new message or part of an old message. You could do this use regular expressions, but I went forward with a more simple method, which splits the time formats and creates a DataFrame from a Raw .txt file.
 
 While reading each line, I split it based on a comma and take the first item returned from the `split()` function. If the line is a new message, the first item would be a valid date, and it will be appended as a new message to the list of messages. If it’s not, the message is part of the previous message, and hence, will be appended to the end of the previous message as one continuous message.
-
-<p align="center">
-<img src="assets/code_snippets/carbon (0).png">
-</p>
 
 ### *Pre-Processing*
 
@@ -101,13 +91,9 @@ And, we will be *replacing names by their initials* for **Better Visualization**
 
 **First plot will be the total number of messages sent per person.** For this, a simple *seaborn countplot* will suffice.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (13).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251723-608d63c6-28be-4618-b757-82c94ccc642d.png)
 
-<p align="center">
-<img src="assets/plots/top10users.png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251736-583aaa9a-7ef3-425d-9ee4-2b9592065247.png)
 
 #### *Comparing the top 10 users!*
 
@@ -115,128 +101,58 @@ And, we will be *replacing names by their initials* for **Better Visualization**
 
 The exported chats were exported without any media files. Any message that contained media was indicated with *‘<Media Omitted> ’*. **We can use this to filter out and see who sends the most media.**
 
-<p align="center">
-<img src="assets/code_snippets/carbon (18).png">
-</p>
-
-### Which user sends the most media?
-Again, a simple plot using seaborn, but a different Color Palette: *CMRmap*.
-
-<p align="center">
-<img src="assets/code_snippets/carbon (19).png">
-</p>
-
-<p align="center">
-<img src="assets/plots/top10media.png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251746-6405641d-0b33-4e55-81d0-7ed7d376077a.png)
 
 ### Top 10 most used Emojis
 
 Will be using the `emoji` module, that was imported earlier.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (20).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251780-b29ff79a-e570-4ba2-8965-b74f83d94e74.png)
 
 Will create another helper column using `emoji.demojize("<emoji>")`, since **emojis will not be rendered in the plots**.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (21).png">
-</p>
-
-Since the emojis **will not be rendered into the plots**, here is how the *top10emojis dataset looks like*!
-
-<p align="center">
-<img src="assets/extras/top10emojis_df.png">
-</p>
-
-<p align="center">
-<img src="assets/extras/3-gina-emoji.gif">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251792-32d1260d-ff0b-4eec-bd10-0c2fdc355cff.png)
 
 #### Which Emoji is the most used in the chat?
 
 This time, it will be plotted a bit differently. Numbers will be plotted on x-direction.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (22).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251824-0f0279f2-e5ec-47c6-8803-7afc3e3da896.png)
 
-<p align="center">
-<img src="assets/plots/top10emoji.png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251845-86d55188-4e39-4505-a0c6-4e297e7e163f.png)
 
-- Not that it is worth anything, but “😂” beats everyone by a *huge margin!*
+- Note that it is worth anything, but “😂” beats everyone by a *huge margin!*
 
 ### Most active days, most active hours, most active months.
 
-Now, I will be analyzing the timely usage of the groups.
-
 ##### Pre-processing for most active hours.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (23).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251860-558c7fa2-38b1-4265-867b-3e496b0c0cc5.png)
 
-<p align="center">
-<img src="assets/code_snippets/carbon (24).png">
-</p>
-
-#### Which hour of the day are most messages exchanged?
-
-<p align="center">
-<img src="assets/plots/most_active_hours.png">
-</p>
-
-Interestingly, the group is most active around **midnight**, followed by *afternoon*.
+![image](https://user-images.githubusercontent.com/75696894/208251878-bfcaa30a-5fd6-458e-8caa-5080b79efd2f.png)
 
 #### Pre-processing Weekdays and Months
 
 Now, irrespective of the number of messages per day or month, we want the order to be remain the same, hence we will be using the order argument in seaborn.
-
-
-<p align="center">
-<img src="assets/code_snippets/carbon (25).png">
-</p>
-
+![image](https://user-images.githubusercontent.com/75696894/208251897-ea19e3f8-8f34-47b8-8fc0-dbf5eb1385ef.png)
+    
 - Plotting multiple charts using `plt.subplots`.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (26).png">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251911-b99fb5f3-23fb-486c-9485-d1e61ff46564.png)
 
 
 #### Visualization
 
 Now, we will be plotting ***grouped by day and respective group by month simultaneously***, to see some interesting results.
 
-<p align="center">
-<img src="assets/plots/days_and_month.png">
-</p>
-
-
+![image](https://user-images.githubusercontent.com/75696894/208251924-702b2ebc-1e33-43cf-b701-ef3172876aa6.png)
 
 ### Most Used Words in the whole chat.
 
 I will be using the `wordcloud` module, to create a WordCloud of the **most used words**! I will be *adding some common words, to the stopwords*, such that it will not be included the WordCloud.
 
-<p align="center">
-<img src="assets/code_snippets/carbon (28).png">
-</p>
-
 #### Most Used Words in the chat
-
-<p align="center">
-<img src="assets/plots/wordcloud.png">
-</p>
-
-### *Conclusion*
-
-**That’s it from my end! I hope you learned and enjoyed a lot!**
-
-<p align="center">
-<img src="assets/extras/5-the-office.gif">
-</p>
+![image](https://user-images.githubusercontent.com/75696894/208251939-b15c61d7-54e0-4c49-b197-43140bf1b619.png)
 
 ## Live Link
 Live Link - https://whatsapp--chat--analyzer.herokuapp.com/
