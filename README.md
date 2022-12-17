@@ -41,7 +41,7 @@ Libraries used :
 6. **datetime** for datetime manipulation.
 
 
-#### *Preparation and reading data*
+### *Preparation and reading data*
 
 Since WhatsApp texts are multi-line, you cannot just read the file line by line and get each message that you want. Instead, you need a way to identify if a line is a new message or part of an old message. You could do this use regular expressions, but I went forward with a more simple method, which splits the time formats and creates a DataFrame from a Raw .txt file.
 
